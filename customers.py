@@ -45,7 +45,7 @@ def read_customers_from_file(filepath):
 def get_by_email(email):
     """Returns the customer object by their email address"""
 
-    return customers[email]
+    return customers.get(email)
 
 
 customers = read_customers_from_file("customers.txt")
