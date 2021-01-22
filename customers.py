@@ -31,13 +31,19 @@ def read_customers_from_file(filepath):
     customers = {}
 
     for line in open(filepath):
-        user_info = line.rstrip().split("|")
+        (first_name, last_name, email, password)= line.strip().split("|")
+        # user_info = line.strip().split("|")
 
-        customers[user_info[2]] = Customer(user_info[0], 
-                                            user_info[1], 
-                                            user_info[2], 
-                                            user_info[3])
+        customers[email] = Customer(first_name, 
+                                    last_name, 
+                                    email, 
+                                    password)
 
     return customers
+
+
+def get_by_email(email):
+    """ """
+    # Use customers dictionary to 
 
 
