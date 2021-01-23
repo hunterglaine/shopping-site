@@ -187,5 +187,13 @@ def checkout():
     return redirect("/melons")
 
 
+@app.route("/logout")
+def process_logout():
+    """Logs user out and redirects to melon page"""
+
+    session["logged_in_customer_email"] = ""
+    flash("Logged out")
+    return redirect("/melons")
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
